@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920, height=1080" />
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      background: #0a0a0a;
+    }
+
+    #root {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+    }
+
+    .clip {
+      position: absolute;
+      inset: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <!--
+      THE GREAT AI JOB APOCALYPSE: MASTER TIMELINE
+      Each segment is its own sub-composition mounted below. To add one: copy templates/segment-template.html
+      into compositions/, mount it with the SAME data-composition-id, set its data-start to the previous
+      segment's end, then raise this root's data-duration. Audio lives here so the whole film mixes in one place.
+
+      MOUNT TABLE (target runtime 12:40 = 760s)
+        #  segment                             start   dur   status
+        1  Cold Open + The Quiet Layoff        0       128   BUILT   compositions/seg1-cold-open.html
+        2  The Restructuring                   128     132   BUILT   compositions/seg2-restructuring.html
+        3  Who's Next                          260     132   BUILT   compositions/seg3-whos-next.html
+        4  Is It Really AI?                    392     118   BUILT   compositions/seg4-is-it-really-ai.html
+        5  The Human Cost                      510     130   BUILT   compositions/seg5-human-cost.html
+        6  Conclusion & Payoff                 640     120   BUILT   compositions/seg6-conclusion-payoff.html
+    -->
+  <div data-hf-id="hf-xsvp" id="root" data-composition-id="main" data-start="0" data-duration="760" data-width="1920" data-height="1080">
+
+    <!-- AUDIO: voiceover (lane 0), music bed (lane 1), sfx (lane 3). Replace the placeholder files in /assets. -->
+    <audio data-hf-id="hf-s3s9" id="vo-seg1" src="assets/vo-seg1.wav" data-start="0" data-duration="128" data-track-index="0"
+      data-volume="1"></audio>
+    <audio data-hf-id="hf-l8cc" id="bed-seg1" src="assets/music-bed-seg1.wav" data-start="0" data-duration="128" data-track-index="1"
+      data-volume="0.14" data-fade-in="1.5" data-fade-out="3"></audio>
+    <audio data-hf-id="hf-nxqc" id="sfx-hit" src="assets/sfx-hit.wav" data-start="0" data-duration="0.6" data-track-index="3"
+      data-volume="0.8"></audio>
+    <audio data-hf-id="hf-nne2" id="sfx-sting" src="assets/sfx-sting.wav" data-start="38" data-duration="2" data-track-index="3"
+      data-volume="0.7"></audio>
+    <audio data-hf-id="hf-3i0o" id="sfx-whoosh1" src="assets/sfx-whoosh.wav" data-start="41.4" data-duration="1.1" data-track-index="3"
+      data-volume="0.6"></audio>
+    <audio data-hf-id="hf-oz4d" id="sfx-stamp" src="assets/sfx-stamp.wav" data-start="80.9" data-duration="0.5" data-track-index="3"
+      data-volume="0.9"></audio>
+    <audio data-hf-id="hf-fx5g" id="sfx-whoosh2" src="assets/sfx-whoosh.wav" data-start="91.4" data-duration="1.1" data-track-index="3"
+      data-volume="0.6"></audio>
+    <audio data-hf-id="hf-qmrz" id="sfx-whoosh3" src="assets/sfx-whoosh.wav" data-start="112.4" data-duration="1.1" data-track-index="3"
+      data-volume="0.6"></audio>
+    <audio data-hf-id="hf-ruh6" id="vo-segments-2-6" src="assets/vo-segments-2-6.wav" data-start="128" data-duration="632" data-track-index="0"
+      data-volume="1"></audio>
+    <audio data-hf-id="hf-z9lk" id="bed-segments-2-6" src="assets/music-bed-segments-2-6.wav" data-start="128" data-duration="632" data-track-index="1"
+      data-volume="0.14" data-fade-in="2" data-fade-out="4"></audio>
+
+    <!-- SEGMENT 1 -->
+    <div data-hf-id="hf-676m" id="seg1" data-composition-id="seg1-cold-open" data-composition-src="compositions/seg1-cold-open.html"
+      data-start="0" data-duration="128" data-track-index="2" data-width="1920" data-height="1080"></div>
+    <div data-hf-id="hf-e8up" id="seg2" data-composition-id="seg2-restructuring" data-composition-src="compositions/seg2-restructuring.html"
+      data-start="128" data-duration="132" data-track-index="2" data-width="1920" data-height="1080"></div>
+    <div data-hf-id="hf-eiv7" id="seg3" data-composition-id="seg3-whos-next" data-composition-src="compositions/seg3-whos-next.html"
+      data-start="260" data-duration="132" data-track-index="2" data-width="1920" data-height="1080"></div>
+    <div data-hf-id="hf-8gbw" id="seg4" data-composition-id="seg4-is-it-really-ai" data-composition-src="compositions/seg4-is-it-really-ai.html"
+      data-start="392" data-duration="118" data-track-index="2" data-width="1920" data-height="1080"></div>
+    <div data-hf-id="hf-l1rz" id="seg5" data-composition-id="seg5-human-cost" data-composition-src="compositions/seg5-human-cost.html"
+      data-start="510" data-duration="130" data-track-index="2" data-width="1920" data-height="1080"></div>
+    <div data-hf-id="hf-87wp" id="seg6" data-composition-id="seg6-conclusion-payoff" data-composition-src="compositions/seg6-conclusion-payoff.html"
+      data-start="640" data-duration="120" data-track-index="2" data-width="1920" data-height="1080"></div>
+  </div>
+
+  <script>
+    // The master timeline stays empty on purpose: every segment owns its own paused GSAP timeline.
+    const tl = gsap.timeline({ paused: true });
+    window.__timelines["main"] = tl;
+    tl.seek(0);
+  </script>
+</body>
+
+</html>
